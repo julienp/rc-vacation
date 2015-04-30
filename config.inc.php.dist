@@ -248,7 +248,8 @@ $rcmail_config['vacation_forward_message_template'] =
  * Virtualmin/LHISP driver
  */
 
-$rcmail_config['vacation_url'] = 'http://localhost:8000/autoreply/';
+// HTTPS needs to be in captial letters,
+$rcmail_config['vacation_url'] = 'HTTPS://example.com/autoreply/';
 $rcmail_config['vacation_user_pass'] = 'user:password';
 
 // end vacation config file

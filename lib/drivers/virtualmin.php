@@ -35,6 +35,9 @@ function vacation_read(array &$data)
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
+                // Set to FALSE since we're on the same machine and without a proper cert, should be TRUE ideally
+                CURLOPT_SSL_VERIFYHOST => FALSE,
+                CURLOPT_SSL_VERIFYPEER => FALSE,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_USERPWD => $user_pass,
                 CURLOPT_URL => $url.$username,
@@ -81,6 +84,8 @@ function vacation_write(array &$data)
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
+                CURLOPT_SSL_VERIFYHOST => FALSE,
+                CURLOPT_SSL_VERIFYPEER => FALSE,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_USERPWD => $user_pass,
                 CURLOPT_URL => $url.$username,
